@@ -1,10 +1,14 @@
 # SkillSpree
 
-SkillSpree is a Personalized Education Platform that provides tailored learning goals, dynamically generated assessments, and personalized course recommendations.
+SkillSpree is a personalized education platform that provides tailored learning goals, dynamically generated assessments, and personalized course recommendations.
 
-## New Project Structure
+## Tech Stack
+- **Backend:** Python, Flask (Application Factory pattern)
+- **Database:** MongoDB
+- **AI:** Google Gemini API
+- **Other:** YouTube API, Jinja templates
 
-The project has been refactored into a scalable Flask Application Factory architecture:
+## Project Structure
 
 ```
 .
@@ -25,15 +29,16 @@ The project has been refactored into a scalable Flask Application Factory archit
 
 ## Setup Instructions
 
-1. **Clone the repository and enter the directory**:
+1. **Clone the repository**:
    ```bash
-   # cd SKILLSPREE
+   git clone https://github.com/adityapandereio6-sketch/SKILLSPREE.git
+   cd SKILLSPREE
    ```
 
 2. **Create and activate a virtual environment**:
    ```bash
    python -m venv venv
-   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+   source venv/bin/activate  # On Windows, use venv\Scripts\activate
    ```
 
 3. **Install the dependencies**:
@@ -41,21 +46,18 @@ The project has been refactored into a scalable Flask Application Factory archit
    pip install -r requirements.txt
    ```
 
-4. **Environment Variables**:
-   Copy `.env.example` to a new file named `.env` and fill in your details:
+4. **Set up environment variables**:
    ```bash
    cp .env.example .env
    ```
-   *Note: Update `MONGO_URI` if your MongoDB isn't running on localhost, and set your own `GOOGLE_API_KEY` for AI features and `SECRET_KEY`.*
+   Then edit `.env` and set `SECRET_KEY`, `MONGO_URI`, `DB_NAME`, and `GOOGLE_API_KEY`.
+   Update `MONGO_URI` if MongoDB isn't running on localhost.
 
 5. **Start the application**:
-   Run the Flask server using the new entry point:
    ```bash
    python run.py
    ```
+   The server starts on `http://localhost:5000`.
 
-## Using `.env`
-The application now uses `python-dotenv` to manage secrets. Ensure that you have created the `.env` file and configured it with `SECRET_KEY`, `MONGO_URI`, `DB_NAME`, and `GOOGLE_API_KEY`. These keys are loaded automatically by `config.py` upon initialization.
-
-## How to run with python run.py
-Simply execute `python run.py` from the root of the directory. The application factory `create_app()` will initialize Flask, register the blueprints, connect to MongoDB, and start the development server on `0.0.0.0:5000`.
+## Authors
+Built by Aditya Pandere and Vinit Chougale.
